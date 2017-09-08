@@ -1,0 +1,43 @@
+set lines=35 columns=110  "设置大小"
+
+"<F5> 运行python程序
+map <F5> :W<CR>:!python %<cr>
+
+"<F2>开启或关闭树形文件结构
+map <F2> :NERDTreeToggle<CR>
+
+"关闭indent插件(方块缩进指示符)
+let g:indent_guides_enable_on_vim_startup = 0
+
+"缩进指示线
+let g:indentLine_char='┆'
+
+"去除多余补全(<Plug>(neosnippet_expand))
+function MyEnterfunc()
+    if pumvisible()
+        return "\<esc>a"
+    else
+        return "\<Enter>"
+    endif
+endfunction
+inoremap <silent> <buffer> <CR> <C-r>=MyEnterfunc()<Cr>
+
+"新建html文件自动生成代码
+autocmd BufNewFile *.html exec ":call SetTitle()"
+func SetTitle()
+call setline(1,"<!DOCTYPE html>")
+call append(line("."), "<html>")
+call append(line(".")+1, "<head>")
+call append(line(".")+2, "    <title></title>")
+call append(line(".")+3, "</head>")
+call append(line(".")+4, "<body>")
+call append(line(".")+5, "")
+call append(line(".")+6, "</body>")
+call append(line(".")+7, "</html>")
+call cursor(4,12)
+endfunc
+
+"script和style正确缩进
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"

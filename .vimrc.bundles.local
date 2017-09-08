@@ -1,0 +1,2 @@
+Plugin 'YggDroot/indentLine'  "缩进指示线"
+Plugin 'vim-scripts/indenthtml.vim'  "html缩进
