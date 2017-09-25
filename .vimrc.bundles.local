@@ -1,3 +1,3 @@
-Plugin 'YggDroot/indentLine'  "缩进指示线"
+Plugin 'YggDroot/indentLine'  "缩进指示线
 Plugin 'vim-scripts/indenthtml.vim'  "html缩进
-Plugin 'Valloric/YouComPleteMe'  "代码补全"
+Plugin 'Valloric/YouComPleteMe'  "代码补全

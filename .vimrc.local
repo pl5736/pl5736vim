@@ -13,6 +13,9 @@ func Myrun()
 endfunc
 map <F5> :call Myrun()<CR>
 
+"<F3> 代码格式化
+map <F3> <ESC>gg=G<CR>
+
 "<F2>开启或关闭树形文件结构
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=0  "不显示隐藏文件
@@ -78,6 +81,16 @@ inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
 inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
 inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
 
-"(,js)写入js标签，(,css)写入css标签
-map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
-map <leader>css o<style type="text/css"><CR><backspace></style><ESC>ko
+"html快捷键
+map <leader>ht :call SetTitle()<CR>
+
+map <leader><leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
+map <leader>js o<script type="text/javascript" src=""></script><ESC>hhhhhhhhhhi
+map <leader>jq o<script type="text/javascript" src="/home/liup/HTML/jquery.js"></script><ESC>
+map <leader>bjs o<script type="text/javascript" src="/home/liup/HTML/bootstrap.js"></script><ESC>
+map <leader>sjs o<script type="text/javascript" src="/home/liup/HTML/swiper.js"></script><ESC>
+
+map <leader><leader>css o<style type="text/css"><CR><backspace></style><ESC>ko
+map <leader>css o<link href="" rel="stylesheet" type="tet/css"><ESC>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhi
+map <leader>bcs o<link href="/home/liup/HTML/bootstrap.css" rel="stylesheet" type="text/css"><ESC>
+map <leader>scs o<link href="/home/liup/HTML/swiper.css" rel="stylesheet" type="text/css"><ESC>
