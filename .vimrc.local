@@ -1,5 +1,12 @@
 set lines=35 columns=110  "设置大小
 
+"<F2>开启或关闭树形文件结构
+map <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=0  "不显示隐藏文件
+
+"<F3> 代码格式化
+map <F3> <ESC>gg=G
+
 "<F5> 运行程序
 func Myrun()
     execute "w"
@@ -13,46 +20,40 @@ func Myrun()
 endfunc
 map <F5> :call Myrun()<CR>
 
-"<F3> 代码格式化
-map <F3> <ESC>gg=G<CR>
+"<leader>w 保存所有已修改的文件
+map <leader>w :wall<CR>
 
-"<F2>开启或关闭树形文件结构
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=0  "不显示隐藏文件
+"html快捷键
+map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
+map <leader>jq o<script type="text/javascript" src="/home/liup/HTML/jquery.js"></script><ESC>
+map <leader>bjs o<script type="text/javascript" src="/home/liup/HTML/bootstrap.js"></script><ESC>
+map <leader>sjs o<script type="text/javascript" src="/home/liup/HTML/swiper.js"></script><ESC>
 
+map <leader>css o<style type="text/css"><CR><backspace></style><ESC>ko
+map <leader>bcs o<link href="/home/liup/HTML/bootstrap.css" rel="stylesheet" type="text/css"><ESC>
+map <leader>scs o<link href="/home/liup/HTML/swiper.css" rel="stylesheet" type="text/css"><ESC>
+
+
+"indentLine 配置
 "关闭indent插件(方块缩进指示符)
 let g:indent_guides_enable_on_vim_startup = 0
-
 "缩进指示线
 let g:indentLine_char='┆'
 
-"新建html文件自动生成代码
-autocmd BufNewFile *.html exec ":call SetTitle()"
-func SetTitle()
-    call setline(1,"<!DOCTYPE html>")
-    call append(line("."), "<html>")
-    call append(line(".")+1, "    <head>")
-    call append(line(".")+2, "        <meta charset=\"UTF-8\">")
-    call append(line(".")+3, "        <title></title>")
-    call append(line(".")+4, "    </head>")
-    call append(line(".")+5, "    <body>")
-    call append(line(".")+6, "    </body>")
-    call append(line(".")+7, "</html>")
-    call cursor(5,16)
-endfunc
 
-"script和style正确缩进
+"indenthtml 配置,script和style正确缩进
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
+
+"YouCompleteMe 配置
 "禁用neocomplete
 let g:neocomplete#enable_at_startup = 0
 function! CleverCr()
     return "\<CR>"
 endfunction
 imap <expr> <CR> CleverCr()
-
 "默认配置文件路径
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "打开vim时不再询问是否加载ycm_extra_conf.py配置
@@ -81,16 +82,10 @@ inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
 inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
 inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
 
-"html快捷键
-map <leader>ht :call SetTitle()<CR>
 
-map <leader><leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
-map <leader>js o<script type="text/javascript" src=""></script><ESC>hhhhhhhhhhi
-map <leader>jq o<script type="text/javascript" src="/home/liup/HTML/jquery.js"></script><ESC>
-map <leader>bjs o<script type="text/javascript" src="/home/liup/HTML/bootstrap.js"></script><ESC>
-map <leader>sjs o<script type="text/javascript" src="/home/liup/HTML/swiper.js"></script><ESC>
-
-map <leader><leader>css o<style type="text/css"><CR><backspace></style><ESC>ko
-map <leader>css o<link href="" rel="stylesheet" type="tet/css"><ESC>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhi
-map <leader>bcs o<link href="/home/liup/HTML/bootstrap.css" rel="stylesheet" type="text/css"><ESC>
-map <leader>scs o<link href="/home/liup/HTML/swiper.css" rel="stylesheet" type="text/css"><ESC>
+"UltiSnips 配置
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<CR>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><tab>"
+"允许拆分窗口
+let g:UltiSnipsEditSplit="vertical"
