@@ -20,6 +20,15 @@ func Myrun()
 endfunc
 map <F5> :call Myrun()<CR>
 
+"<leader><F5> 运行Django程序
+func DjangoRun()
+    execute "w"
+    if &filetype=='python'
+        execute "!python % runserver"
+    endif
+endfunc
+map <leader><F5> :call DjangoRun()<CR>
+
 "<leader>w 保存所有已修改的文件
 map <leader>w :wall<CR>
 
