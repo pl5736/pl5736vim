@@ -9,3 +9,4 @@
 　　　　```:PluginInstall```<br>
 　　4.退出vim，运行脚本编译YouCompleteMe：<br>
 　　　　```bash ~/pl.sh```<br>
+
