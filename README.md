@@ -5,10 +5,6 @@
 　　2.设置pl5736vim：<br>
 　　　　```git clone https://github.com/pl5736/pl5736vim.git ~```<br>
 　　3.进入vim，输入命令：<br>
-　　　　```:PluginInstall<br>```<br>
-　　3.编译YouCompleteMe：<br>
-　　　　```sudo apt-get install build-essential cmake```<br>
-　　　　```sudo apt-get install build-essential cmake3```<br>
-　　　　```sudo apt-get install python-dev python3-dev```<br>
-　　　　```cd ~/.vim/bundle/YouCompleteMe```<br>
-　　　　```./install.py --clang-completer```<br>
+　　　　```:PluginInstall```<br>
+　　4.退出vim，运行脚本编译YouCompleteMe：<br>
+　　　　```bash ~/pl5736vim.sh```<br>
