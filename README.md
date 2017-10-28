@@ -4,7 +4,7 @@
 　　1.安装vim和git：<br>
 　　　　```sudo apt-get install vim```<br>
 　　　　```sudo apt-get install git```<br>
-　　2.设置pl5736vim：<br>
+　　2.获取pl5736vim：<br>
 　　　　```git clone https://github.com/pl5736/pl5736vim.git```<br>
-　　3.运行脚本编译YouCompleteMe：<br>
+　　3.配置pl5736vim：<br>
 　　　　```bash ~/pl5736vim/pl5736vim.sh```<br>
