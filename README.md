@@ -10,8 +10,5 @@
 ## 简易安装：
 　　1.获取pl5736vim：<br>
 　　　　```git clone https://github.com/pl5736/pl5736vim.git ~/pl5736vim```<br>
-　　2.进入vim，输入命令：<br>
-　　　　```:PluginInstall```<br>
-　　　退出vim<br>
-　　3.配置pl5736vim：<br>
+　　2.配置pl5736vim：<br>
 　　　　```bash ~/pl5736vim/pl5736vim.sh```<br>
