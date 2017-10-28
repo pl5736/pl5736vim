@@ -89,7 +89,7 @@
         if count(g:pl5736_bundle_groups, 'general')
             Bundle 'scrooloose/nerdtree'
             Bundle 'altercation/vim-colors-solarized'
-            Bundle 'pl5736/vim-colors'
+            Bundle 'spf13/vim-colors'
             Bundle 'tpope/vim-surround'
             Bundle 'tpope/vim-repeat'
             Bundle 'rhysd/conflict-marker.vim'
@@ -179,7 +179,7 @@
 
     " PHP {
         if count(g:pl5736_bundle_groups, 'php')
-            Bundle 'pl5736/PIV'
+            Bundle 'spf13/PIV'
             Bundle 'arnaud-lb/vim-php-namespace'
             Bundle 'beyondwords/vim-twig'
         endif
@@ -230,7 +230,7 @@
 
     " HTML {
         if count(g:pl5736_bundle_groups, 'html')
-            Bundle 'vim-script/HTML-AutoCloseTag'
+            Bundle 'vim-scripts/HTML-AutoCloseTag'
             Bundle 'hail2u/vim-css3-syntax'
             Bundle 'gorodinskiy/vim-coloresque'
             Bundle 'tpope/vim-haml'
@@ -272,7 +272,7 @@
         if count(g:pl5736_bundle_groups, 'misc')
             Bundle 'rust-lang/rust.vim'
             Bundle 'tpope/vim-markdown'
-            Bundle 'pl5736/vim-preview'
+            Bundle 'spf13/vim-preview'
             Bundle 'tpope/vim-cucumber'
             Bundle 'cespare/vim-toml'
             Bundle 'quentindecock/vim-cucumber-align-pipes'
