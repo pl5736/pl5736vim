@@ -3,8 +3,6 @@
 "   If you wish to add or remove individual bundles, create
 "   ~/.vimrc.bundles.local and `Bundle` or `UnBundle` as needed
 "   from there.
-"
-"   You can find me at http://spf13.com
 " }
 
 " Environment {
