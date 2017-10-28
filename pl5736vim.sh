@@ -1,10 +1,10 @@
 #!/bin/bash
-mv ~/pl5736vim/.vimrc ~
-mv ~/pl5736vim/.vimrc.before ~
-mv ~/pl5736vim/.vimrc.bundles ~
-mv ~/pl5736vim/.vimrc.bundles.local ~
-mv ~/pl5736vim/.vimrc.local ~
-mv ~/pl5736vim/.vim ~
+mv ~/pl5736vim/.vimrc ~ -b -S _old
+mv ~/pl5736vim/.vimrc.before ~ -b -S _old
+mv ~/pl5736vim/.vimrc.bundles ~ -b -S _old
+mv ~/pl5736vim/.vimrc.bundles.local ~ -b -S _old
+mv ~/pl5736vim/.vimrc.local ~ -b -S _old
+mv ~/pl5736vim/.vim ~ -b -S _old
 vim +PluginInstall +qall
 sudo apt-get install build-essential cmake
 sudo apt-get install build-essential cmake3
