@@ -6,6 +6,7 @@
 　　　　```sudo apt-get install vim```<br>
 　　安装git：<br>
 　　　　```sudo apt-get install git```<br>
+### 安装前请自行备份现有的vim配置！
 ## 简易安装：
 　　1.获取pl5736vim：<br>
 　　　　```git clone https://github.com/pl5736/pl5736vim.git```<br>
