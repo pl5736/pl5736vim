@@ -30,7 +30,7 @@
           set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
         endif
     " }
-    
+
     " Arrow Key Fix {
         if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
             inoremap <silent> <C-[>OC <RIGHT>
@@ -931,23 +931,23 @@
         endfor
         return s:is_fork
     endfunction
-     
+
     function! s:ExpandFilenameAndExecute(command, file)
         execute a:command . " " . expand(a:file, ":p")
     endfunction
-     
+
     function! s:Editpl5736Config()
         call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
-     
+
         execute bufwinnr(".vimrc") . "wincmd w"
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
-     
+
         if <SID>Ispl5736Fork()
             execute bufwinnr(".vimrc") . "wincmd w"
             call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
@@ -956,10 +956,10 @@
             wincmd l
             call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
         endif
-     
+
         execute bufwinnr(".vimrc.local") . "wincmd w"
     endfunction
-     
+
     execute "noremap " . s:pl5736_edit_config_mapping " :call <SID>Editpl5736Config()<CR>"
     execute "noremap " . s:pl5736_apply_config_mapping . " :source ~/.vimrc<CR>"
 " }

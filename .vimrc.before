@@ -74,7 +74,7 @@
     " Mappings for editing/applying pl5736 config
     "   let g:pl5736_edit_config_mapping='<leader>ev'
     "   let g:pl5736_apply_config_mapping='<leader>sv'
-    
+
 " }
 
 " Use fork before if available {
