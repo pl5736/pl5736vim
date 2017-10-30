@@ -9,5 +9,3 @@ cp ~/pl5736vim/.vim ~ -r
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouComPleteMe
 ./install.py --clang-completer
-rm -rf ~/.vim/bundle/vundle
-cp ~/.vim/bundle/Vundle.vim ~/.vim/bundle/vundle -r
