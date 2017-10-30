@@ -8,7 +8,7 @@
 　　　　安装curl：<br>
 　　　　　　```sudo apt-get -y install curl```<br>
 ## 简易安装：
-　　在shell运行以下命令即可自动安装并配置：<br>
+　　在shell运行以下命令即可自动安装并配置，文件较大请在网络良好时进行，并请耐心等待：<br>
 　　　　```bash <(curl https://raw.githubusercontent.com/pl5736/pl5736vim/master/pl5736vim.sh)```<br>
 ### 遇到难以解决的bug可以尝试发送邮件：
 　　```liup5736@gmail.com```
