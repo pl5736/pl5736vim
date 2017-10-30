@@ -7,12 +7,12 @@
 　　　　```sudo apt-get install vim```<br>
 　　安装git：<br>
 　　　　```sudo apt-get install git```<br>
-为了成功安装代码自动补全插件YCM，需要CMake和Python headers<br>
+为了成功安装代码自动补全插件YCM，需要CMake和Python headers。<br>
 　　安装CMake：<br>
 　　　　```sudo apt-get install build-essential cmake```<br>
 　　安装Python headers：<br>
 　　　　```sudo apt-get install python-dev python3-dev```<br>
-　　在较旧的系统上，CMake可能遇到编译问题，需安装：<br>
+　　注意，在较旧的系统上（如ubuntu 14.04），CMake可能遇到编译问题，此时需安装：<br>
 　　　　```sudo apt-get install build-essential cmake3```<br>
 ## 简易安装：
 　　1.获取pl5736vim：<br>
