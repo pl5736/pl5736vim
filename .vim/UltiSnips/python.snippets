@@ -1,4 +1,12 @@
 #import 导包
+snippet Blueprint
+from flask import Blueprint
+endsnippet
+
+snippet Bootstrap
+from flask_bootstrap import Bootstrap
+endsnippet
+
 snippet Flask
 from flask import Flask
 endsnippet
@@ -19,12 +27,20 @@ snippet JsonResponse
 from django.http import JsonResponse
 endsnippet
 
+snippet Mail
+from flask_mail import Mail
+endsnippet
+
 snippet Manager
 from flask_script import Manager
 endsnippet
 
 snippet models
 from ${1}.models import ${0}
+endsnippet
+
+snippet Moment
+from flask_moment import Moment
 endsnippet
 
 snippet options
@@ -53,6 +69,10 @@ endsnippet
 
 snippet settings
 from django.conf import settings
+endsnippet
+
+snippet SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 endsnippet
 
 snippet threading
