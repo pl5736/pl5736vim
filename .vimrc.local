@@ -43,10 +43,7 @@ map <leader>bcs o<link href="/home/liup/HTML/bootstrap.css" rel="stylesheet" typ
 map <leader>scs o<link href="/home/liup/HTML/swiper.css" rel="stylesheet" type="text/css"><ESC>
 
 
-"indentLine 配置
-"关闭indent插件(方块缩进指示符)
-let g:indent_guides_enable_on_vim_startup = 0
-"缩进指示线
+"indentLine 配置，缩进指示线
 let g:indentLine_char='┆'
 
 
@@ -57,12 +54,6 @@ let g:html_indent_style1 = "inc"
 
 
 "YouCompleteMe 配置
-"禁用neocomplete
-let g:neocomplete#enable_at_startup = 0
-function! CleverCr()
-    return "\<CR>"
-endfunction
-imap <expr> <CR> CleverCr()
 "默认配置文件路径
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "打开vim时不再询问是否加载ycm_extra_conf.py配置
