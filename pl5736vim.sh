@@ -10,7 +10,10 @@ cp ~/pl5736vim/.vimrc.before ~ -b -S _old
 cp ~/pl5736vim/.vimrc.bundles ~ -b -S _old
 cp ~/pl5736vim/.vimrc.bundles.local ~ -b -S _old
 cp ~/pl5736vim/.vimrc.local ~ -b -S _old
-mv ~/.vim ~/.vim_old
+cd ~
+if [ -d ".vim" ]; then
+    mv ~/.vim ~/.vim_old
+fi
 cp ~/pl5736vim/.vim ~ -r
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouComPleteMe
