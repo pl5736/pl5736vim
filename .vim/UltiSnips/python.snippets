@@ -7,8 +7,40 @@ snippet Bootstrap
 from flask_bootstrap import Bootstrap
 endsnippet
 
+snippet check_password_hash
+from werkzeug.security import check_password_hash
+endsnippet
+
+snippet current_app
+from flask import current_app
+endsnippet
+
+snippet DataRequired
+from wtforms.validators import DataRequired
+endsnippet
+
+snippet Email
+from wtforms.validators import Email
+endsnippet
+
+snippet EqualTo
+from wtforms.validators import EqualTo
+endsnippet
+
+snippet Field
+from wtforms import ${1}Field${0}
+endsnippet
+
+snippet flash
+from flask import flash
+endsnippet
+
 snippet Flask
 from flask import Flask
+endsnippet
+
+snippet generate_password_hash
+from werkzeug.security import generate_password_hash
 endsnippet
 
 snippet httpserver
@@ -27,12 +59,28 @@ snippet JsonResponse
 from django.http import JsonResponse
 endsnippet
 
+snippet Length
+from wtforms.validators import Length
+endsnippet
+
 snippet Mail
 from flask_mail import Mail
 endsnippet
 
 snippet Manager
 from flask_script import Manager
+endsnippet
+
+snippet Message
+from flask_mail import Message
+endsnippet
+
+snippet Migrate
+from flask_migrate import Migrate
+endsnippet
+
+snippet MigrateCommand
+from flask_migrate import MigrateCommand
 endsnippet
 
 snippet models
@@ -71,6 +119,10 @@ snippet render_template
 from flask import render_template
 endsnippet
 
+snippet Serializer
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+endsnippet
+
 snippet settings
 from django.conf import settings
 endsnippet
@@ -87,8 +139,20 @@ snippet time
 import time
 endsnippet
 
+snippet TimedJSONWebSignatureSerializer
+from itsdangerous import TimedJSONWebSignatureSerializer
+endsnippet
+
 snippet url
 from django.conf.urls import url
+endsnippet
+
+snippet url_for
+from flask import url_for
+endsnippet
+
+snippet ValidationError
+from wtforms import ValidationError
 endsnippet
 
 snippet views
