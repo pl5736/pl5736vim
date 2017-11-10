@@ -1,4 +1,8 @@
 #import 导包
+snippet abort
+from flask import abort
+endsnippet
+
 snippet Blueprint
 from flask import Blueprint
 endsnippet
@@ -11,12 +15,24 @@ snippet check_password_hash
 from werkzeug.security import check_password_hash
 endsnippet
 
+snippet configure_uploads
+from flask_uploads import configure_uploads
+endsnippet
+
 snippet current_app
 from flask import current_app
 endsnippet
 
+snippet current_user
+from flask_login import current_user
+endsnippet
+
 snippet DataRequired
 from wtforms.validators import DataRequired
+endsnippet
+
+snippet datetime
+from datetime import datetime
 endsnippet
 
 snippet Email
@@ -28,7 +44,19 @@ from wtforms.validators import EqualTo
 endsnippet
 
 snippet Field
-from wtforms import ${1}Field${0}
+from wtforms import ${1}Field
+endsnippet
+
+snippet FileAllowed
+from flask_wtf.file import FileAllowed
+endsnippet
+
+snippet FileField
+from flask_wtf.file import FileField
+endsnippet
+
+snippet FileRequired
+from flask_wtf.file import FileRequired
 endsnippet
 
 snippet flash
@@ -39,12 +67,28 @@ snippet Flask
 from flask import Flask
 endsnippet
 
+snippet FlaskForm
+from flask_wtf import FlaskForm
+endsnippet
+
 snippet generate_password_hash
 from werkzeug.security import generate_password_hash
 endsnippet
 
+snippet HTTPBasicAuth
+from flask_httpauth import HTTPBasicAuth
+endsnippet
+
 snippet httpserver
 from tornado import httpserver
+endsnippet
+
+snippet Image
+from PIL import Image
+endsnippet
+
+snippet IMAGES
+from flask_uploads import IMAGES
 endsnippet
 
 snippet include
@@ -53,6 +97,10 @@ endsnippet
 
 snippet ioloop
 import tornado.ioloop
+endsnippet
+
+snippet jsonify
+from flask import jsonify
 endsnippet
 
 snippet JsonResponse
@@ -115,6 +163,10 @@ snippet os
 import os
 endsnippet
 
+snippet patch_request_class
+from flask_uploads import patch_request_class
+endsnippet
+
 snippet pymysql
 import pymysql
 endsnippet
@@ -163,6 +215,10 @@ snippet TimedJSONWebSignatureSerializer
 from itsdangerous import TimedJSONWebSignatureSerializer
 endsnippet
 
+snippet UploadSet
+from flask_uploads import UploadSet
+endsnippet
+
 snippet url
 from django.conf.urls import url
 endsnippet
@@ -180,7 +236,7 @@ from wtforms import ValidationError
 endsnippet
 
 snippet views
-from ${1} import views${0}
+from ${1} import views
 endsnippet
 
 snippet web

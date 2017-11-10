@@ -1,14 +1,5 @@
-snippet block
-{% block ${1} %}
-${0}{% endblock %}
-endsnippet
-
 snippet css
-<link href="${1}" rel="stylesheet" type="text/css">${0}
-endsnippet
-
-snippet extends
-{% extends '${1}.html' %}${0}
+<link href="${1}" rel="stylesheet" type="text/css">
 endsnippet
 
 snippet html
@@ -17,13 +8,13 @@ snippet html
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <title>${0}</title>
+        <title>${1}</title>
     </head>
-    <body>
+    <body>${0}
     </body>
 </html>
 endsnippet
 
 snippet js
-<script type="text/javascript" src="${1}"></script>${0}
+<script type="text/javascript" src="${1}"></script>
 endsnippet

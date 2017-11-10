@@ -1,0 +1,14 @@
+snippet block
+{% block ${1} %}
+${2}{% endblock %}
+endsnippet
+
+snippet extends
+{% extends '${2}${1:base.html}' %}
+endsnippet
+
+snippet for
+{% for ${1:i} in $1${2} %}
+${3}
+{% endfor %}
+endsnippet
