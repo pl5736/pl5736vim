@@ -29,6 +29,9 @@ func DjangoRun()
 endfunc
 map <leader><F5> :call DjangoRun()<CR>
 
+"<leader>jg 切换为django文件类型
+map <leader>jg :set filetype=htmldjango<CR>
+
 "<leader>w 保存所有已修改的文件
 map <leader>w :wall<CR>
 
