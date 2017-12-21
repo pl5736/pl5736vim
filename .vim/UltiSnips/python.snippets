@@ -43,6 +43,10 @@ snippet EqualTo
 from wtforms.validators import EqualTo
 endsnippet
 
+snippet Faker
+from faker import Faker
+endsnippet
+
 snippet Field
 from wtforms import ${1}Field
 endsnippet
@@ -77,6 +81,14 @@ endsnippet
 
 snippet HTTPBasicAuth
 from flask_httpauth import HTTPBasicAuth
+endsnippet
+
+snippet HttpResponse
+from django.http import HttpResponse
+endsnippet
+
+snippet HttpResponseRedirect
+from django.http import HttpResponseRedirect
 endsnippet
 
 snippet httpserver
@@ -163,6 +175,10 @@ snippet os
 import os
 endsnippet
 
+snippet parse
+import urllib.parse
+endsnippet
+
 snippet patch_request_class
 from flask_uploads import patch_request_class
 endsnippet
@@ -175,12 +191,8 @@ snippet random
 import random
 endsnippet
 
-snippet redirect_d
-from django.shortcuts import redirect
-endsnippet
-
-snippet redirect_f
-from flask import redirect
+snippet redirect
+${1:from django.shortcuts import redirect}${2:from flask import redirect}
 endsnippet
 
 snippet render_template
@@ -188,7 +200,15 @@ from flask import render_template
 endsnippet
 
 snippet request
-from flask import request
+${1:from flask import request}${2:import urllib.request}
+endsnippet
+
+snippet requests
+import requests
+endsnippet
+
+snippet reverse
+from django.core.urlresolvers import reverse
 endsnippet
 
 snippet Serializer
