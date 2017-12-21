@@ -89,6 +89,6 @@ inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
 "UltiSnips 配置
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<CR>"
-let g:UltiSnipsJumpBackwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><CR>"
 "允许拆分窗口
 let g:UltiSnipsEditSplit="vertical"
