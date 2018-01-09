@@ -35,6 +35,10 @@ snippet datetime
 from datetime import datetime
 endsnippet
 
+snippet DropItem
+from scrapy.exceptions import DropItem
+endsnippet
+
 snippet Email
 from wtforms.validators import Email
 endsnippet
@@ -111,6 +115,10 @@ snippet ioloop
 import tornado.ioloop
 endsnippet
 
+snippet Item
+from ${1}.items import ${2}Item
+endsnippet
+
 snippet jsonify
 from flask import jsonify
 endsnippet
@@ -121,6 +129,10 @@ endsnippet
 
 snippet Length
 from wtforms.validators import Length
+endsnippet
+
+snippet logging
+import logging
 endsnippet
 
 snippet LoginManager
@@ -167,12 +179,24 @@ snippet Moment
 from flask_moment import Moment
 endsnippet
 
+snippet NotConfigured
+from scrapy.exceptions import NotConfigured
+endsnippet
+
 snippet options
 from tornado.options import options
 endsnippet
 
 snippet os
 import os
+endsnippet
+
+snippet paginator
+from django.core import paginator
+endsnippet
+
+snippet _parse_proxy
+from urllib.request import _parse_proxy
 endsnippet
 
 snippet parse
@@ -195,6 +219,10 @@ snippet redirect
 ${1:from django.shortcuts import redirect}${2:from flask import redirect}
 endsnippet
 
+snippet redis
+import redis
+endsnippet
+
 snippet render_template
 from flask import render_template
 endsnippet
@@ -209,6 +237,10 @@ endsnippet
 
 snippet reverse
 from django.core.urlresolvers import reverse
+endsnippet
+
+snippet scrapy
+import scrapy
 endsnippet
 
 snippet Serializer
