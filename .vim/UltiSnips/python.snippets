@@ -43,8 +43,16 @@ snippet Email
 from wtforms.validators import Email
 endsnippet
 
+snippet Enum
+from enum import Enum
+endsnippet
+
 snippet EqualTo
 from wtforms.validators import EqualTo
+endsnippet
+
+snippet etree
+from lxml import etree
 endsnippet
 
 snippet Faker
@@ -52,7 +60,7 @@ from faker import Faker
 endsnippet
 
 snippet Field
-from wtforms import ${1}Field
+${1:from scrapy import Field}${2:from wtforms import ${3}Field}
 endsnippet
 
 snippet FileAllowed
@@ -61,6 +69,10 @@ endsnippet
 
 snippet FileField
 from flask_wtf.file import FileField
+endsnippet
+
+snippet FileHandler
+from logging import FileHandler
 endsnippet
 
 snippet FileRequired
@@ -77,6 +89,22 @@ endsnippet
 
 snippet FlaskForm
 from flask_wtf import FlaskForm
+endsnippet
+
+snippet FlaskView
+from flask_classy import FlaskView
+endsnippet
+
+snippet Formatter
+from logging import Formatter
+endsnippet
+
+snippet func
+from sqlalchemy.sql import func
+endsnippet
+
+snippet functools
+import functools
 endsnippet
 
 snippet generate_password_hash
@@ -119,12 +147,20 @@ snippet Item
 from ${1}.items import ${2}Item
 endsnippet
 
+snippet json
+from flask import json
+endsnippet
+
 snippet jsonify
 from flask import jsonify
 endsnippet
 
 snippet JsonResponse
 from django.http import JsonResponse
+endsnippet
+
+snippet Keys
+from selenium.webdriver.common.keys import Keys
 endsnippet
 
 snippet Length
@@ -183,6 +219,14 @@ snippet NotConfigured
 from scrapy.exceptions import NotConfigured
 endsnippet
 
+snippet np
+import numpy as np
+endsnippet
+
+snippet numpy
+import numpy
+endsnippet
+
 snippet options
 from tornado.options import options
 endsnippet
@@ -211,6 +255,10 @@ snippet pymysql
 import pymysql
 endsnippet
 
+snippet randint
+from random import randint
+endsnippet
+
 snippet random
 import random
 endsnippet
@@ -227,6 +275,10 @@ snippet render_template
 from flask import render_template
 endsnippet
 
+snippet Request
+from scrapy import Request
+endsnippet
+
 snippet request
 ${1:from flask import request}${2:import urllib.request}
 endsnippet
@@ -235,8 +287,16 @@ snippet requests
 import requests
 endsnippet
 
+snippet Response
+from flask import Response
+endsnippet
+
 snippet reverse
 from django.core.urlresolvers import reverse
+endsnippet
+
+snippet route
+from flask_classy import route
 endsnippet
 
 snippet scrapy
@@ -247,12 +307,28 @@ snippet Serializer
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 endsnippet
 
+snippet Server
+from flask_script import Server
+endsnippet
+
 snippet settings
 from django.conf import settings
 endsnippet
 
+snippet Shell
+from flask_script import Shell
+endsnippet
+
 snippet SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
+endsnippet
+
+snippet TestCase
+from unittest import TestCase
+endsnippet
+
+snippet text
+from sqlalchemy import text
 endsnippet
 
 snippet threading
@@ -267,6 +343,10 @@ snippet TimedJSONWebSignatureSerializer
 from itsdangerous import TimedJSONWebSignatureSerializer
 endsnippet
 
+snippet unique
+from enum import unique
+endsnippet
+
 snippet UploadSet
 from flask_uploads import UploadSet
 endsnippet
@@ -277,6 +357,10 @@ endsnippet
 
 snippet url_for
 from flask import url_for
+endsnippet
+
+snippet urlencode
+from urllib.parse import urlencode
 endsnippet
 
 snippet UserMixin
@@ -293,4 +377,8 @@ endsnippet
 
 snippet web
 import tornado.web
+endsnippet
+
+snippet webdriver
+from selenium import webdriver
 endsnippet
