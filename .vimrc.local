@@ -4,8 +4,12 @@ set lines=35 columns=110  "设置大小
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=0  "不显示隐藏文件
 
-"<F3> 代码格式化
-map <F3> <ESC>gg=G
+"<F3>跳转到函数定义, <leader><F3> 跳转到函数声明
+map <F3> :YcmCompleter GoToDefinition<CR>
+map <leader><F3> :YcmCompleter GoToDeclaration<CR>
+
+"<F4> 代码格式化
+map <F4> <ESC>gg=G
 
 "<F5> 运行程序
 func Myrun()
@@ -34,6 +38,10 @@ map <leader>jg :set filetype=htmldjango<CR>
 
 "<leader>w 保存所有已修改的文件
 map <leader>w :wall<CR>
+
+"<leader>z 导入Python包
+map <leader>z viwyggo<ESC>pa,<TAB>
+imap <leader>z <backspace><backspace>,<space>
 
 "html快捷键
 map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
