@@ -16,6 +16,7 @@ if [ -d ".vim" ]; then
     mv ~/.vim ~/.vim_old
 fi
 cp ~/pl5736vim/.vim ~ -r
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouComPleteMe
 ./install.py --clang-completer
