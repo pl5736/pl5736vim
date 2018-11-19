@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo apt-get -y install vim
 sudo apt-get -y install git
+sudo apt-get -y install vim-gtk
 sudo apt-get -y install build-essential cmake
 sudo apt-get -y install build-essential cmake3
 sudo apt-get -y install python-dev python3-dev

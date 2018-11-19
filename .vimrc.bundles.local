@@ -2,4 +2,3 @@ Plugin 'YggDroot/indentLine'  "缩进指示线
 Plugin 'vim-scripts/indenthtml.vim'  "html缩进
 Plugin 'Valloric/YouComPleteMe'  "代码补全
 Plugin 'SirVer/ultisnips'  "自定义代码块补全引擎
-Plugin 'Chiel92/vim-autoformat'  "自动化格式代码
