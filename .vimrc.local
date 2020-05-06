@@ -1,5 +1,8 @@
 set lines=35 columns=110  "设置大小
 
+"禁用F1查看vim帮助文件，防止卡死
+map <F1> <Nop>
+
 "<F2>开启或关闭树形文件结构
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=0  "不显示隐藏文件
@@ -20,6 +23,8 @@ func Myrun()
         execute "!google-chrome %"
     elseif &filetype=='sh'
         execute "!bash %"
+    elseif &filetype=='cron'
+        execute "!crontab %"
     endif
 endfunc
 map <F5> :call Myrun()<CR>
