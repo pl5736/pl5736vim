@@ -20,5 +20,5 @@ fi
 cp ~/pl5736vim/.vim ~ -r
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
-cd ~/.vim/bundle/YouComPleteMe
+cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
