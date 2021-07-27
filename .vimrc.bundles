@@ -77,7 +77,7 @@
     " In your .vimrc.before.local file
     " list only the plugin groups you will use
     if !exists('g:pl5736_bundle_groups')
-        let g:pl5736_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+        let g:pl5736_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
     endif
 
     " To override all the included bundles, add the following to your
@@ -160,7 +160,7 @@
                 source ~/.vim/bundle/vim-snippets/snippets/support_functions.vim
             endif
         elseif count(g:pl5736_bundle_groups, 'youcompleteme')
-            Bundle 'Valloric/YouCompleteMe'
+            Bundle 'ycm-core/YouCompleteMe'
             Bundle 'SirVer/ultisnips'
             Bundle 'honza/vim-snippets'
         elseif count(g:pl5736_bundle_groups, 'neocomplcache')
@@ -185,7 +185,7 @@
     " Python {
         if count(g:pl5736_bundle_groups, 'python')
             " Pick either python-mode or pyflakes & pydoc
-            Bundle 'klen/python-mode'
+            Bundle 'python-mode/python-mode'
             Bundle 'yssource/python.vim'
             Bundle 'python_match.vim'
             Bundle 'pythoncomplete'

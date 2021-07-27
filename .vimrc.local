@@ -1,5 +1,10 @@
 set lines=35 columns=110  "设置大小
 
+"禁用鼠标
+map <leader>m <ESC>:set mouse=<CR>
+"恢复鼠标
+map <leader><leader>m <ESC>:set mouse=a<CR>
+
 "禁用F1查看vim帮助文件，防止卡死
 map <F1> <Nop>
 
