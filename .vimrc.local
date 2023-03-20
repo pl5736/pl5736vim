@@ -1,9 +1,6 @@
 set lines=35 columns=110  "设置大小
-
-"禁用鼠标
-map <leader>m <ESC>:set mouse=<CR>
-"恢复鼠标
-map <leader><leader>m <ESC>:set mouse=a<CR>
+"根据文件类型设置tab类型，只有go恢复正常tab，其他文件是四个空格
+autocmd FileType go set noexpandtab nolist
 
 "禁用F1查看vim帮助文件，防止卡死
 map <F1> <Nop>
@@ -23,7 +20,9 @@ map <F4> <ESC>:PymodeLintAuto<CR>
 func Myrun()
     execute "w"
     if &filetype=='python'
-        execute "!python %"
+        execute "!python3 %"
+    elseif &filetype=='go'
+        execute "!go run %"
     elseif &filetype=='html'
         execute "!google-chrome %"
     elseif &filetype=='sh'
@@ -64,6 +63,11 @@ map <leader>w :wall<CR>
 "<leader>z 导入Python包
 map <leader>z viwyggo<ESC>pa,<TAB>
 imap <leader>z <backspace><backspace>,<space>
+
+"<leader>x 复制单词
+map <leader>x viwy
+"<leader><leader>x 粘贴单词
+map <leader><leader>x viwp
 
 "html快捷键
 map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
