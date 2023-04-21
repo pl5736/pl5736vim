@@ -69,6 +69,9 @@ map <leader>x viwy
 "<leader><leader>x 粘贴单词
 map <leader><leader>x viwp
 
+"<leader>v 选中单词
+map <leader>v viw
+
 "html快捷键
 map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko
 map <leader>jq o<script type="text/javascript" src="/home/liup/HTML/jquery.js"></script><ESC>
