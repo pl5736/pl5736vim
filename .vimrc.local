@@ -1,4 +1,4 @@
-set lines=35 columns=110  "设置大小
+set lines=30 columns=120  "设置大小
 "根据文件类型设置tab类型，只有go恢复正常tab，其他文件是四个空格
 autocmd FileType go set noexpandtab nolist
 
@@ -63,14 +63,6 @@ map <leader>w :wall<CR>
 "<leader>z 导入Python包
 map <leader>z viwyggo<ESC>pa,<TAB>
 imap <leader>z <backspace><backspace>,<space>
-
-"<leader>x 复制单词
-map <leader>x viwy
-"<leader><leader>x 粘贴单词
-map <leader><leader>x viwp
-
-"<leader>v 选中单词
-map <leader>v viw
 
 "html快捷键
 map <leader>js o<script type="text/javascript"><CR><backspace></script><ESC>ko

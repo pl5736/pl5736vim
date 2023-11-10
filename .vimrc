@@ -51,6 +51,12 @@
     endif
 " }
 
+" Use idea vimrc config if available {
+    if filereadable(expand("~/.vimrc.idea"))
+        source ~/.vimrc.idea
+    endif
+" }
+
 " General {
 
     set background=dark         " Assume a dark background
@@ -75,14 +81,6 @@
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
-
-    if has('clipboard')
-        if has('unnamedplus')  " When possible use + register for copy-paste
-            set clipboard=unnamed,unnamedplus
-        else         " On mac and Windows, use * register for copy-paste
-            set clipboard=unnamed
-        endif
-    endif
 
     " Most prefer to automatically switch to the current file directory when
     " a new buffer is opened; to prevent this behavior, add the following to
@@ -187,24 +185,6 @@
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
-    set backspace=indent,eol,start  " Backspace for dummies
-    set linespace=0                 " No extra spaces between rows
-    set number                      " Line numbers on
-    set showmatch                   " Show matching brackets/parenthesis
-    set incsearch                   " Find as you type search
-    set hlsearch                    " Highlight search terms
-    set winminheight=0              " Windows can be 0 line high
-    set ignorecase                  " Case insensitive search
-    set smartcase                   " Case sensitive when uc present
-    set wildmenu                    " Show list instead of just completing
-    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
-    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-    set scrolljump=5                " Lines to scroll when cursor leaves screen
-    set scrolloff=3                 " Minimum lines to keep above and below cursor
-    set foldenable                  " Auto fold code
-    set list
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-
 " }
 
 " Formatting {
@@ -241,21 +221,6 @@
 " }
 
 " Key (re)Mappings {
-
-    " The default leader is '\', but many people prefer ',' as it's in a standard
-    " location. To override this behavior and set it back to '\' (or any other
-    " character) add the following to your .vimrc.before.local file:
-    "   let g:pl5736_leader='\'
-    if !exists('g:pl5736_leader')
-        let mapleader = ','
-    else
-        let mapleader=g:pl5736_leader
-    endif
-    if !exists('g:pl5736_localleader')
-        let maplocalleader = '_'
-    else
-        let maplocalleader=g:pl5736_localleader
-    endif
 
     " The default mappings for editing and applying the pl5736 configuration
     " are <leader>ev and <leader>sv respectively. Change them to your preference
