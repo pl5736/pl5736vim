@@ -7,7 +7,7 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo apt update
-sudo apt -y install mono-complete golang nodejs openjdk-17-jdk openjdk-17-jre npm
+sudo apt -y install mono-complete golang nodejs openjdk-17-jdk openjdk-17-jre
 sudo rm -r /etc/apt/sources.list.d/nodesource.list
 sudo rm -r /etc/apt/keyrings/nodesource.gpg
 sudo apt -y install python-pip
