@@ -1,3 +1,0 @@
-Plugin 'YggDroot/indentLine'  "缩进指示线
-Plugin 'vim-scripts/indenthtml.vim'  "html缩进
-Plugin 'Chiel92/vim-autoformat'  "自动化格式代码

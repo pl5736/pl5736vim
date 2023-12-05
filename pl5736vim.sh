@@ -14,7 +14,6 @@ git clone https://github.com/pl5736/pl5736vim.git ~/pl5736vim
 cp ~/pl5736vim/.vimrc ~ -b -S _old
 cp ~/pl5736vim/.vimrc.before ~ -b -S _old
 cp ~/pl5736vim/.vimrc.bundles ~ -b -S _old
-cp ~/pl5736vim/.vimrc.bundles.local ~ -b -S _old
 cp ~/pl5736vim/.vimrc.local ~ -b -S _old
 cp ~/pl5736vim/.vimrc.idea ~ -b -S _old
 cp ~/pl5736vim/.ideavimrc ~ -b -S _old

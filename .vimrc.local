@@ -1,20 +1,7 @@
 set lines=30 columns=120  "设置大小
-"根据文件类型设置tab类型，只有go恢复正常tab，其他文件是四个空格
-autocmd FileType go set noexpandtab nolist
 
 "禁用F1查看vim帮助文件，防止卡死
 map <F1> <Nop>
-
-"<F2>开启或关闭树形文件结构
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=0  "不显示隐藏文件
-
-"<F3>跳转到函数定义, <leader><F3> 跳转到函数声明
-map <F3> :YcmCompleter GoToDefinition<CR>
-map <leader><F3> :YcmCompleter GoToDeclaration<CR>
-
-"<F4> 代码格式化
-map <F4> <ESC>:PymodeLintAuto<CR>
 
 "<F5> 运行程序
 func Myrun()
@@ -73,51 +60,3 @@ map <leader>sjs o<script type="text/javascript" src="/home/liup/HTML/swiper.js">
 map <leader>css o<style type="text/css"><CR><backspace></style><ESC>ko
 map <leader>bcs o<link href="/home/liup/HTML/bootstrap.css" rel="stylesheet" type="text/css"><ESC>
 map <leader>scs o<link href="/home/liup/HTML/swiper.css" rel="stylesheet" type="text/css"><ESC>
-
-
-"indentLine 配置，缩进指示线
-let g:indentLine_char='┆'
-
-
-"indenthtml 配置,script和style正确缩进
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-
-
-"YouCompleteMe 配置
-"默认配置文件路径
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-"打开vim时不再询问是否加载ycm_extra_conf.py配置
-let g:ycm_confirm_extra_conf=0
-set completeopt=longest,menu
-"python解释器路径
-let g:ycm_path_to_python_interpreter='/usr/bin/python3'
-"是否开启语义补全
-let g:ycm_seed_identifiers_with_syntax=1
-"是否在注释中也开启补全
-let g:ycm_complete_in_comments=1
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-"开始补全的字符数
-let g:ycm_min_num_of_chars_for_completion=2
-"补全后自动关机预览窗口
-let g:ycm_autoclose_preview_window_after_completion=1
-"禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-"字符串中也开启补全
-let g:ycm_complete_in_strings = 1
-"离开插入模式后自动关闭预览窗口
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"上下左右键行为
-inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
-inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
-inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
-inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
-
-
-"UltiSnips 配置
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<CR>"
-let g:UltiSnipsJumpBackwardTrigger="<leader><CR>"
-"允许拆分窗口
-let g:UltiSnipsEditSplit="vertical"

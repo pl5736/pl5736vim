@@ -122,6 +122,10 @@
             Bundle 'kana/vim-textobj-user'
             Bundle 'kana/vim-textobj-indent'
             Bundle 'gcmt/wildfire.vim'
+            " indent indicator line
+            Plugin 'YggDroot/indentLine'
+            " html indent
+            Plugin 'vim-scripts/indenthtml.vim'
         endif
     " }
 
@@ -162,14 +166,6 @@
         elseif count(g:pl5736_bundle_groups, 'youcompleteme')
             Bundle 'ycm-core/YouCompleteMe'
             Bundle 'SirVer/ultisnips'
-            Bundle 'honza/vim-snippets'
-        elseif count(g:pl5736_bundle_groups, 'neocomplcache')
-            Bundle 'Shougo/neosnippet'
-            Bundle 'Shougo/neosnippet-snippets'
-            Bundle 'honza/vim-snippets'
-        elseif count(g:pl5736_bundle_groups, 'neocomplete')
-            Bundle 'Shougo/neosnippet'
-            Bundle 'Shougo/neosnippet-snippets'
             Bundle 'honza/vim-snippets'
         endif
     " }
@@ -279,12 +275,6 @@
 
     endif
 
-" }
-
-" Use fork bundles config if available {
-    if filereadable(expand("~/.vimrc.bundles.fork"))
-        source ~/.vimrc.bundles.fork
-    endif
 " }
 
 " Use local bundles config if available {

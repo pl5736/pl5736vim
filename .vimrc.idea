@@ -6,6 +6,9 @@
         else         " On mac and Windows, use * register for copy-paste
             set clipboard=unnamed
         endif
+    else
+        " idea: has not clipboard
+        set clipboard=unnamed,unnamedplus
     endif
 
 " }
@@ -52,10 +55,10 @@
 " }
 
 
-"<leader>x 复制单词
+" <leader>x copy word
 map <leader>x viwy
-"<leader><leader>x 粘贴单词
+" <leader><leader>x paste word
 map <leader><leader>x viwp
 
-"<leader>v 选中单词
+" <leader>v select word
 map <leader>v viw

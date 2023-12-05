@@ -207,6 +207,9 @@
     "   let g:pl5736_keep_trailing_whitespace = 1
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:pl5736_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
+    " Set the tab type according to the file type.
+    " Only golang: normal tab, other files: four spaces
+    autocmd FileType go set noexpandtab nolist
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
     " preceding line best in a plugin but here for now.
@@ -511,6 +514,8 @@
 
     " NerdTree {
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
+            " <F2> open or close the tree file structure
+            map <F2> :NERDTreeToggle<CR>
             map <C-e> <plug>NERDTreeTabsToggle<CR>
             map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
@@ -520,7 +525,8 @@
             let NERDTreeChDirMode=0
             let NERDTreeQuitOnOpen=1
             let NERDTreeMouseMode=2
-            let NERDTreeShowHidden=1
+            " do not show hidden files
+            let NERDTreeShowHidden=0
             let NERDTreeKeepTreeInNewTab=1
             let g:nerdtree_tabs_open_on_gui_startup=0
         endif
@@ -572,6 +578,8 @@
             let g:pymode_trim_whitespaces = 0
             let g:pymode_options = 0
             let g:pymode_rope = 0
+            " <leader><F3> code formatting
+            map <leader><F3> <ESC>:PymodeLintAuto<CR>
         endif
     " }
 
@@ -654,9 +662,11 @@
             let g:ycm_collect_identifiers_from_tags_files = 1
 
             " remap Ultisnips for compatibility for YCM
-            let g:UltiSnipsExpandTrigger = '<C-j>'
-            let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-            let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+            let g:UltiSnipsExpandTrigger="<leader><tab>"
+            let g:UltiSnipsJumpForwardTrigger="<CR>"
+            let g:UltiSnipsJumpBackwardTrigger="<leader><CR>"
+            " allow split windows
+            let g:UltiSnipsEditSplit="vertical"
 
             " Enable omni completion.
             autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -685,33 +695,40 @@
             " When enabled, there can be too much visual noise
             " especially when splits are used.
             set completeopt-=preview
-        endif
-    " }
 
-    " Snippets {
-        if count(g:pl5736_bundle_groups, 'neocomplcache') ||
-                    \ count(g:pl5736_bundle_groups, 'neocomplete')
+            " <F4> jump to function definition
+            map <F4> :YcmCompleter GoToDefinition<CR>
+            " <leader><F4> jump to function declaration
+            map <leader><F4> :YcmCompleter GoToDeclaration<CR>
 
-            " Use honza's snippets.
-            let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
-            " Enable neosnippet snipmate compatibility mode
-            let g:neosnippet#enable_snipmate_compatibility = 1
-
-            " For snippet_complete marker.
-            if !exists("g:pl5736_no_conceal")
-                if has('conceal')
-                    set conceallevel=2 concealcursor=i
-                endif
-            endif
-
-            " Enable neosnippets when using go
-            let g:go_snippet_engine = "neosnippet"
-
-            " Disable the neosnippet preview candidate window
-            " When enabled, there can be too much visual noise
-            " especially when splits are used.
-            set completeopt-=preview
+            " Default configuration file path
+            let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+            " No longer asks whether to load the ycm_extra_conf.py configuration
+            " when opening vim
+            let g:ycm_confirm_extra_conf=0
+            set completeopt=longest,menu
+            " python interpreter path
+            let g:ycm_path_to_python_interpreter='/usr/bin/python3'
+            " whether to enable semantic completion
+            let g:ycm_seed_identifiers_with_syntax=1
+            " whether to enable completion in comments
+            let g:ycm_complete_in_comments=1
+            let g:ycm_collect_identifiers_from_comments_and_strings = 0
+            " number of characters to start completion
+            let g:ycm_min_num_of_chars_for_completion=2
+            " automatically close the preview window after completion
+            let g:ycm_autoclose_preview_window_after_completion=1
+            " disable caching of matches and regenerate matches each time
+            let g:ycm_cache_omnifunc=0
+            " enable completion in strings
+            let g:ycm_complete_in_strings = 1
+            " automatically close preview window after leaving insert mode
+            autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+            " up, down, left and right key behavior
+            inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
+            inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
+            inoremap <expr> <PageDown> pumvisible() ? '\<PageDown>\<C-p>\<C-n>' : '\<PageDown>'
+            inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
         endif
     " }
 
@@ -761,7 +778,28 @@
         endif
     " }
 
+    " syntastic {
+        if isdirectory(expand("~/.vim/bundle/syntastic/"))
+            let g:syntastic_python_checkers=["flake8"]
+            let g:syntastic_python_flake8_post_args="--max-line-length=120"
+        endif
+    "}
 
+    " indenthtml {
+        if isdirectory(expand("~/.vim/bundle/indenthtml.vim/"))
+            " correct indentation of script and style
+            let g:html_indent_inctags = "html,body,head,tbody"
+            let g:html_indent_script1 = "inc"
+            let g:html_indent_style1 = "inc"
+        endif
+    "}
+
+    " indenthtml {
+        if isdirectory(expand("~/.vim/bundle/indentLine/"))
+            " indent indicator line
+            let g:indentLine_char='┆'
+        endif
+    "}
 
 " }
 
@@ -927,12 +965,6 @@
 
     execute "noremap " . s:pl5736_edit_config_mapping " :call <SID>Editpl5736Config()<CR>"
     execute "noremap " . s:pl5736_apply_config_mapping . " :source ~/.vimrc<CR>"
-" }
-
-" Use fork vimrc if available {
-    if filereadable(expand("~/.vimrc.fork"))
-        source ~/.vimrc.fork
-    endif
 " }
 
 " Use local vimrc if available {

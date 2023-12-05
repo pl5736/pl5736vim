@@ -29,11 +29,6 @@
     " Clear search highlighting
     "   let g:pl5736_clear_search_highlight = 1
 
-    " Disable neosnippet expansion
-    " This maps over <C-k> and does some Supertab
-    " emulation with snippets
-    "   let g:pl5736_no_neosnippet_expand = 1
-
     " Disable whitespace stripping
     "   let g:pl5736_keep_trailing_whitespace = 1
 
@@ -75,12 +70,6 @@
     "   let g:pl5736_edit_config_mapping='<leader>ev'
     "   let g:pl5736_apply_config_mapping='<leader>sv'
 
-" }
-
-" Use fork before if available {
-    if filereadable(expand("~/.vimrc.before.fork"))
-        source ~/.vimrc.before.fork
-    endif
 " }
 
 " Use local before if available {

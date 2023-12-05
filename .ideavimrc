@@ -1,0 +1,4 @@
+source ~/.vimrc.idea
+
+" enable IdeaVim-EasyMotion
+Plug 'easymotion/vim-easymotion'
